@@ -15,10 +15,10 @@ MonoBehaviour:
   DatabaseType: 0
   CategoryNames:
   - Custom
-  - Example
   - General
   - MainMenu
+  - Level Cleared
   Categories:
-  - {fileID: 11400000, guid: 40f9e81ff80114a47a3721228ba749ed, type: 2}
   - {fileID: 11400000, guid: 7f9201e5bd8a4ed43b447a9200b29c8b, type: 2}
   - {fileID: 11400000, guid: b269312577f843442afc830ee0cf5cfb, type: 2}
+  - {fileID: 11400000, guid: 87eaef8698bd98c419655183bf62c94b, type: 2}

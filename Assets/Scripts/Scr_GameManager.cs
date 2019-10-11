@@ -1,9 +1,8 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Scr_GameManager : MonoBehaviour
 {
-
     private class positions
     {
         public Vector3 pos = new Vector3();
@@ -29,24 +28,24 @@ public class Scr_GameManager : MonoBehaviour
         myPositions = new positions[maxNumGhost];
         heads = new positions[maxNumGhost];
         Player_Tran = FindObjectOfType<Scr_Player>().GetComponent<Transform>();
-        currentPos =  heads[currentGhost] = myPositions[currentGhost] = new positions();
+        currentPos = heads[currentGhost] = myPositions[currentGhost] = new positions();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             Move(Player_Tran.up);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             Move(-Player_Tran.up);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             Move(Player_Tran.right);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             Move(-Player_Tran.right);
         }
@@ -79,7 +78,7 @@ public class Scr_GameManager : MonoBehaviour
         if (currentGhost == 0)
             return;
 
-        for(int i = 0; i < currentGhost; i++)
+        for (int i = 0; i < currentGhost; i++)
         {
             if (myPositions[i] != null)
             {
@@ -94,10 +93,10 @@ public class Scr_GameManager : MonoBehaviour
     {
         currentGhost++;
         Player_Tran.GetComponent<Scr_Player>().Return();
-        GameObject ghost =  Instantiate(GhostPrefab);
+        GameObject ghost = Instantiate(GhostPrefab);
         ghosts.Add(ghost);
         currentPos = heads[currentGhost] = myPositions[currentGhost] = new positions();
-        for (int i = 0; i < currentGhost-1; i++)
+        for (int i = 0; i < currentGhost - 1; i++)
         {
             ghosts[i].transform.position = Player_Tran.position;
             myPositions[i] = heads[i];

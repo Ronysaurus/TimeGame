@@ -9,7 +9,6 @@ public class Scr_Player : MonoBehaviour
     {
         gm = FindObjectOfType<Scr_GameManager>();
         startingPoint = transform.position;
-        Debug.Log(startingPoint);
     }
 
     private void OnTriggerEnter(Collider c)
