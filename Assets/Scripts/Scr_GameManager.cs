@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scr_GameManager : MonoBehaviour
 {
@@ -107,6 +108,7 @@ public class Scr_GameManager : MonoBehaviour
     {
         levelClear_panel.SetActive(true);
         FindObjectOfType<Scr_ScoreManager>().SetScores(currentGhost, numMoves);
+        Scr_LevelManager.SetLevelCleared(SceneManager.GetActiveScene().buildIndex);
     }
 
     public Vector3 GetLastPos()
