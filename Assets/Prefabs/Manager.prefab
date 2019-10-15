@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb9ad234853b8d4ba75d9dcd4af6416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumGhost: 0
+  maxNumGhost: 3
   GhostPrefab: {fileID: 8224114378792589767, guid: 89de27876e5db7a45b8c215f436c1cc0,
     type: 3}
   levelClear_panel: {fileID: 0}

@@ -18,7 +18,9 @@ MonoBehaviour:
   - General
   - MainMenu
   - Level Cleared
+  - Pause
   Categories:
   - {fileID: 11400000, guid: 7f9201e5bd8a4ed43b447a9200b29c8b, type: 2}
   - {fileID: 11400000, guid: b269312577f843442afc830ee0cf5cfb, type: 2}
   - {fileID: 11400000, guid: 87eaef8698bd98c419655183bf62c94b, type: 2}
+  - {fileID: 11400000, guid: 22ba7b83b71eac049998598b2c04e46c, type: 2}

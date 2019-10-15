@@ -23,6 +23,8 @@ public class Scr_GameManager : MonoBehaviour
     private List<GameObject> ghosts;
     private int numMoves;
 
+    private Scr_PauseMenu pause;
+
     private void Start()
     {
         ghosts = new List<GameObject>();
@@ -30,10 +32,17 @@ public class Scr_GameManager : MonoBehaviour
         heads = new positions[maxNumGhost];
         Player_Tran = FindObjectOfType<Scr_Player>().GetComponent<Transform>();
         currentPos = heads[currentGhost] = myPositions[currentGhost] = new positions();
+        pause = FindObjectOfType<Scr_PauseMenu>();
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            pause.Pause();
+
+        if (Scr_PauseMenu.isPause)
+            return;
+
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             Move(Player_Tran.up);
