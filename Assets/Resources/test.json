@@ -1,0 +1,13 @@
+{
+	"MaxClones": 10,
+	"Tiles": [
+		{
+			"0": {
+				"posX": 0,
+				"posY": 0,
+				"Type": 0,
+				"Conn": 0
+			}
+		}
+	]
+}
