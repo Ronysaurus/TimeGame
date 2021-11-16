@@ -8,7 +8,16 @@ public class Scr_LevelCreator : MonoBehaviour
 {
     JsonData jsonData;
 
-    public GameObject normalTile;
+    enum Tiles 
+    {
+        TNormal,
+        TWall,
+        TSwitch,
+        TDoor,
+         TEnd
+    }
+
+    public GameObject [] myTiles;
 
     private void Start()
     {
@@ -28,14 +37,7 @@ public class Scr_LevelCreator : MonoBehaviour
         int numTiles = jsonData["Tiles"].Count;
         for (int i = 0; i < numTiles; i++)
         {
-            switch (int.Parse(jsonData["Tiles"][i]["Type"].ToString()))
-            {
-                case 0:
-                    {
-                        GameObject.Instantiate(normalTile, new Vector3(float.Parse(jsonData["Tiles"][i]["posX"].ToString()), float.Parse(jsonData["Tiles"][i]["posY"].ToString())), Quaternion.identity);
-                        break;
-                    }
-            }
+            GameObject tile =  GameObject.Instantiate(myTiles[int.Parse(jsonData["Tiles"][i]["Type"].ToString())], new Vector3(float.Parse(jsonData["Tiles"][i]["posX"].ToString()), float.Parse(jsonData["Tiles"][i]["posY"].ToString())), Quaternion.identity);
         }
     }
 }
